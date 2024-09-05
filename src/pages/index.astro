@@ -10,8 +10,8 @@ import HeroSectionImage from "../images/home-hero-section.jpg";
 <MainLayout title="Forside">
   <Header />
   <main>
-    <div class="hero-section">
-      <div class="description-section">
+    <div class="hero-section pc-flex-row">
+      <div class="description-section flex-col">
         <h1>Adam Buschemia Business Consultant</h1>
         <p>
           Get help from Alex Moore, a professional business coach with advanced
@@ -19,10 +19,11 @@ import HeroSectionImage from "../images/home-hero-section.jpg";
         </p>
         <Button color="primary" buttonText="Book A Meeting" />
       </div>
-      <div class="image-section">
+      <div class="image-section pc-only">
         <Image src={HeroSectionImage} alt="Billede af en kvinde" />
       </div>
     </div>
+
     <div class="content">
       <div class="pc-flex-row gap-m justify-center">
         <HomeInfoCards
@@ -41,6 +42,16 @@ import HeroSectionImage from "../images/home-hero-section.jpg";
           buttonText="Explore Our Solution"
         />
       </div>
+
+      <div>
+        <h2>What To Expect?</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
     </div>
   </main>
 </MainLayout>
@@ -50,16 +61,37 @@ import HeroSectionImage from "../images/home-hero-section.jpg";
     height: 616px;
     width: 100%;
     background-color: var(--secondary-color);
+
+    & .description-section {
+      align-items: center;
+      justify-content: center;
+
+      & * {
+        max-width: 500px;
+        color: var(--secondary-text-color);
+      }
+
+      & .primary {
+        align-self: flex-start;
+      }
+    }
   }
 
-  .description-section h1,
-  p {
-    color: red;
+  & .image-section {
+    flex: 1;
   }
 
-  .image-section {
-    width: 100%;
-    height: 616px;
+  & img {
     object-fit: cover;
+    object-position: 0 22%;
+  }
+
+  @media (min-width: 769px) {
+    .description-section {
+      flex: 1;
+      align-items: flex-end;
+      justify-content: center;
+      margin-right: var(--spacing-3xl);
+    }
   }
 </style>
