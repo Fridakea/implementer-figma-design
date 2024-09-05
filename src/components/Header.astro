@@ -1,0 +1,29 @@
+---
+import LoginButton from "./LoginButton.astro";
+---
+
+<nav>
+  <div class="content flex-row align-center space-between">
+    <a href="/"><h3>AskExperts</h3></a>
+    <div class="flex-row gap-l">
+      <a href="#">Home</a>
+      <a href="#">Case Study</a>
+      <a href="#">Team</a>
+      <a href="#">About</a>
+    </div>
+    <LoginButton />
+  </div>
+</nav>
+
+<style>
+  nav {
+    width: 100%;
+    padding: var(--spacing-l);
+    background-color: var(--secondary-color-tint);
+
+    & div a,
+    div h3 {
+      color: var(--secondary-text-color);
+    }
+  }
+</style>

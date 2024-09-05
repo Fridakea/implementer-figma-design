@@ -1,3 +1,80 @@
-/* Import fonts */
+/* Import fonts and styling fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
+* {
+    font-family: "Lato", sans-serif;
+    color: var(--primary-text-p-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Cabin", sans-serif;
+    font-weight: 700;
+    color: var(--primary-text-header-color);
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+h6 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* General classnames */
+.content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.mobile-only {
+    display: inline-block;
+}
+
+.pc-only {
+    display: none;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.gap-l {
+    gap: var(--spacing-l);
+}
