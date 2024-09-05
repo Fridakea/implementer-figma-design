@@ -1,0 +1,31 @@
+:root {
+    /* Variables for colors */
+    --primary-color: #FFFFFF;
+    --primary-color-shade: #F5F5F5;
+    --primary-color-shade-2: #EBEBEB; 
+    --secondary-color: #181818;
+    --secondary-color-tint: rgba(27, 27, 27, 0.91);
+    --action-color: #FFCC4A;
+    --action-color-2: #4EAF4E;
+
+    --primary-text-header-color: #000000;
+    --primary-text-p-color: #595566;
+    --secondary-text-color: #FFFFFF;
+    --action-text-color: #181818;
+
+    /* Variables for spacing */
+    --spacing-3xs: 0.25rem;
+    --spacing-2xs: 0.5rem;
+    --spacing-xs: 0.75rem;
+    --spacing-s: 1rem;
+    --spacing-m: 1.5rem;
+    --spacing-l: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+    --spacing-3xl: 6rem;
+    
+    /* Variables for border radius */
+    --rounding-s: 20px;
+    --rounding-m: 30px;
+    --rounding-l: 100px;
+}
