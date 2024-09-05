@@ -1,9 +1,65 @@
 ---
+import { Image } from "astro:assets";
 import MainLayout from "../layouts/MainLayout.astro";
 import Header from "../components/Header.astro";
+import HomeInfoCards from "../components/HomeInfoCards.astro";
+import Button from "../components/Button.astro";
+import HeroSectionImage from "../images/home-hero-section.jpg";
 ---
 
 <MainLayout title="Forside">
   <Header />
-  <h1>Index</h1>
+  <main>
+    <div class="hero-section">
+      <div class="description-section">
+        <h1>Adam Buschemia Business Consultant</h1>
+        <p>
+          Get help from Alex Moore, a professional business coach with advanced
+          experience on growth and business scaling.
+        </p>
+        <Button color="primary" buttonText="Book A Meeting" />
+      </div>
+      <div class="image-section">
+        <Image src={HeroSectionImage} alt="Billede af en kvinde" />
+      </div>
+    </div>
+    <div class="content">
+      <div class="pc-flex-row gap-m justify-center">
+        <HomeInfoCards
+          heading="Finance & Restructuring"
+          text="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling."
+          buttonText="Our Services"
+        />
+        <HomeInfoCards
+          heading="Our Approach"
+          text="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling."
+          buttonText="More About"
+        />
+        <HomeInfoCards
+          heading="Consultalk Result"
+          text="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling."
+          buttonText="Explore Our Solution"
+        />
+      </div>
+    </div>
+  </main>
 </MainLayout>
+
+<style>
+  .hero-section {
+    height: 616px;
+    width: 100%;
+    background-color: var(--secondary-color);
+  }
+
+  .description-section h1,
+  p {
+    color: red;
+  }
+
+  .image-section {
+    width: 100%;
+    height: 616px;
+    object-fit: cover;
+  }
+</style>

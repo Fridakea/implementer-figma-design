@@ -1,0 +1,27 @@
+---
+const { text, color } = Astro.props;
+---
+
+<button class={color}>{text}</button>
+
+<style>
+  button {
+    padding: 16px 32px;
+    border-radius: var(--rounding-l);
+  }
+
+  .primary {
+    background-color: var(--primary-color);
+    color: var(--primary-text-p-color);
+  }
+
+  .secondary {
+    background-color: var(--secondary-color-shade);
+    color: var(--secondary-text-color);
+  }
+
+  .action {
+    background-color: var(--action-color);
+    color: var(--secondary-text-color);
+  }
+</style>

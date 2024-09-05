@@ -14,34 +14,41 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: 3rem;
+    margin-bottom: var(--spacing-s);
 }
 
 h2 {
     font-size: 2.5rem;
+    margin-bottom: var(--spacing-xs);
 }
 
 h3 {
     font-size: 2rem;
+    margin-bottom: var(--spacing-2xs);
 }
 
 h4 {
     font-size: 1.5rem;
     font-weight: 600;
+    margin-bottom: var(--spacing-3xs);
 }
 
 h5 {
     font-size: 1.25rem;
     font-weight: 600;
+    margin-bottom: var(--spacing-3xs);
 }
 
 h6 {
     font-size: 1rem;
     font-weight: 500;
+    margin-bottom: var(--spacing-3xs);
 }
 
 /* General classnames */
 .content {
     max-width: 1200px;
+    padding: 0 var(--spacing-s);
     margin: auto;
 }
 
@@ -73,6 +80,19 @@ h6 {
 
 .space-between {
     justify-content: space-between;
+}
+
+/* General classnames for spacing */
+.mb-l {
+    margin-bottom: var(--spacing-l);
+}
+
+.mb-xl {
+    margin-bottom: var(--spacing-xl);
+}
+
+.gap-m {
+    gap: var(--spacing-m);
 }
 
 .gap-l {

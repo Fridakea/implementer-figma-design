@@ -1,0 +1,32 @@
+---
+import Button from "./Button.astro";
+const { heading, text, buttonText } = Astro.props;
+---
+
+<div>
+  <h4>{heading}</h4>
+  <p class="mb-l">{text}</p>
+  <Button color="secondary" text={buttonText} />
+</div>
+
+<style>
+  div {
+    width: 100%;
+    padding: var(--spacing-xl);
+    border-radius: var(--rounding-s);
+    background-color: var(--secondary-color-tint);
+    color: var(--secondary-text-color);
+    border: 1px solid var(--primary-color-shade-2);
+  }
+
+  h4,
+  p {
+    color: var(--secondary-text-color);
+  }
+
+  @media (min-width: 769px) {
+    div {
+      width: 33.3%;
+    }
+  }
+</style>

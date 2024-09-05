@@ -3,8 +3,9 @@
     --primary-color: #FFFFFF;
     --primary-color-shade: #F5F5F5;
     --primary-color-shade-2: #EBEBEB; 
-    --secondary-color: #181818;
     --secondary-color-tint: rgba(27, 27, 27, 0.91);
+    --secondary-color: #181818;
+    --secondary-color-shade: #151515;
     --action-color: #FFCC4A;
     --action-color-2: #4EAF4E;
 
