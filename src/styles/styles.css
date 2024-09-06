@@ -83,12 +83,20 @@ h6 {
 }
 
 /* General classnames for spacing */
+.mb-m {
+    margin-bottom: var(--spacing-m);
+}
+
 .mb-l {
     margin-bottom: var(--spacing-l);
 }
 
 .mb-xl {
     margin-bottom: var(--spacing-xl);
+}
+
+.mb-3xl {
+    margin-bottom: var(--spacing-3xl);
 }
 
 .gap-m {

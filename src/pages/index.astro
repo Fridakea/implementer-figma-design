@@ -10,7 +10,7 @@ import HeroSectionImage from "../images/home-hero-section.jpg";
 <MainLayout title="Forside">
   <Header />
   <main>
-    <div class="hero-section pc-flex-row">
+    <section class="hero-section pc-flex-row">
       <div class="description-section flex-col">
         <h1>Adam Buschemia Business Consultant</h1>
         <p>
@@ -22,10 +22,10 @@ import HeroSectionImage from "../images/home-hero-section.jpg";
       <div class="image-section pc-only">
         <Image src={HeroSectionImage} alt="Billede af en kvinde" />
       </div>
-    </div>
+    </section>
 
     <div class="content">
-      <div class="pc-flex-row gap-m justify-center">
+      <div class="flex-col gap-m pc-flex-row justify-center mb-3xl">
         <HomeInfoCards
           heading="Finance & Restructuring"
           text="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling."
@@ -43,28 +43,31 @@ import HeroSectionImage from "../images/home-hero-section.jpg";
         />
       </div>
 
-      <div>
-        <h2>What To Expect?</h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </p>
-      </div>
+      <section class="expect-section">
+        <div class="mb-m">
+          <h2>What To Expect?</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        <Image src={HeroSectionImage} alt="Billede af kvinde" />
+      </section>
     </div>
   </main>
 </MainLayout>
 
 <style>
   .hero-section {
-    height: 616px;
     width: 100%;
     background-color: var(--secondary-color);
+    margin-bottom: var(--spacing-2xl);
 
     & .description-section {
       align-items: center;
-      justify-content: center;
+      padding: 15%;
 
       & * {
         max-width: 500px;
@@ -79,19 +82,49 @@ import HeroSectionImage from "../images/home-hero-section.jpg";
 
   & .image-section {
     flex: 1;
+
+    & img {
+      object-fit: cover;
+      object-position: 0 22%;
+    }
   }
 
-  & img {
-    object-fit: cover;
-    object-position: 0 22%;
+  .expect-section {
+    margin-bottom: var(--spacing-3xl);
+
+    & img {
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: var(--rounding-m);
+    }
   }
 
   @media (min-width: 769px) {
-    .description-section {
-      flex: 1;
-      align-items: flex-end;
-      justify-content: center;
-      margin-right: var(--spacing-3xl);
+    .hero-section {
+      height: 616px;
+
+      & .description-section {
+        padding: 0;
+        margin-right: var(--spacing-3xl);
+        flex: 1;
+        align-items: flex-end;
+        justify-content: center;
+      }
+    }
+
+    .expect-section {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: var(--spacing-2xl);
+
+      & div {
+        grid-column: 2 / 3;
+      }
+
+      & img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
     }
   }
 </style>
