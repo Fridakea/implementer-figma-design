@@ -1,0 +1,23 @@
+---
+import ArrowIcon from "../icons/ArrowIcon.astro";
+---
+
+<div class="card flex-col">
+  <h5>titel</h5>
+  <p>Lorem</p>
+  <div>
+    <h5>Read More</h5>
+    <ArrowIcon />
+  </div>
+</div>
+
+<style>
+  .card {
+    background-color: var(--primary-color);
+    border-radius: var(--rounding-s);
+
+    & * {
+      color: var(--primary-text-color);
+    }
+  }
+</style>
