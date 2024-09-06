@@ -5,7 +5,9 @@ import Header from "../components/Header.astro";
 import HomeInfoCards from "../components/HomeInfoCards.astro";
 import Button from "../components/Button.astro";
 import HeroSectionImage from "../images/home-hero-section.jpg";
-import CheckIcon from "../components/CheckIcon.astro";
+import CheckIcon from "../icons/CheckIcon.astro";
+import ExperienceSection from "../components/ExperienceSection.astro";
+import ValueSection from "../components/ValueSection.astro";
 ---
 
 <MainLayout title="Forside">
@@ -72,6 +74,10 @@ import CheckIcon from "../components/CheckIcon.astro";
         <Image src={HeroSectionImage} alt="Billede af kvinde" />
       </section>
     </section>
+
+    <ExperienceSection />
+
+    <ValueSection />
   </main>
 </MainLayout>
 

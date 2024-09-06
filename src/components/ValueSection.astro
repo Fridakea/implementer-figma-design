@@ -1,17 +1,29 @@
 ---
 import Button from "../components/Button.astro";
+import ValueCard from "./ValueCard.astro";
 ---
 
 <section>
-  <div>
-    <h6>Growing With our clients</h6>
-    <h2>Our core values & principles</h2>
-    <p>
-      Capitalize on low hanging fruit to identify a ballpark value added
-      activity beta test. Override the digital divide with additional from
-      DevOps.
-    </p>
-    <Button color="primary" buttonText="Get In Touch" />
+  <div class="content">
+    <div>
+      <h6>Growing With our clients</h6>
+      <h2>Our core values & principles</h2>
+      <p>
+        Capitalize on low hanging fruit to identify a ballpark value added
+        activity beta test. Override the digital divide with additional from
+        DevOps.
+      </p>
+      <Button color="primary" buttonText="Get In Touch" />
+    </div>
+    <div>
+      <ValueCard />
+    </div>
   </div>
-  <div></div>
 </section>
+
+<style>
+  section {
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--secondary-color);
+  }
+</style>
