@@ -1,0 +1,45 @@
+---
+import ConsistencyChart from "../components/ConsistencyChart.astro";
+import ImprovementChart from "../components/ImprovementChart.astro";
+import BranchingChart from "../components/BranchingChart.astro";
+---
+
+<section>
+  <div class="content pc-flex-row">
+    <div>
+      <h6>Experience</h6>
+      <h2>More than 25 years of experience</h2>
+      <p>3000+ our clients are insured around the World</p>
+    </div>
+    <div class="flex-row">
+      <div class="flex-col align-center flex-1">
+        <ConsistencyChart />
+        <h4>Consistency</h4>
+      </div>
+      <div class="flex-col align-center flex-1">
+        <ImprovementChart />
+        <h4>Improvement</h4>
+      </div>
+      <div class="flex-col align-center flex-1">
+        <BranchingChart />
+        <h4>Branching</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--action-color);
+  }
+
+  h6 {
+    max-width: 112px;
+    background-color: var(--primary-color);
+  }
+
+  p {
+    color: var(--action-text-color);
+  }
+</style>
