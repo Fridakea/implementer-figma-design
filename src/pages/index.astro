@@ -53,6 +53,56 @@ import HeroSectionImage from "../images/home-hero-section.jpg";
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </p>
+          <ul>
+            <li>
+              <svg
+                width="23"
+                height="23"
+                viewBox="0 0 23 23"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.855 8.83838L9.83628 14.5803L6.83203 11.7093"
+                  stroke="#4EAF4E"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+                <path
+                  d="M11.3433 21.1426C16.7795 21.1426 21.1865 16.7356 21.1865 11.2993C21.1865 5.86303 16.7795 1.45605 11.3433 1.45605C5.90698 1.45605 1.5 5.86303 1.5 11.2993C1.5 16.7356 5.90698 21.1426 11.3433 21.1426Z"
+                  stroke="#4EAF4E"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+              Bring to the table win-win survival strategies to ensure proactive
+              domination. At the end of the day.
+            </li>
+            <li>
+              <svg
+                width="23"
+                height="23"
+                viewBox="0 0 23 23"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.855 8.83838L9.83628 14.5803L6.83203 11.7093"
+                  stroke="#4EAF4E"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+                <path
+                  d="M11.3433 21.1426C16.7795 21.1426 21.1865 16.7356 21.1865 11.2993C21.1865 5.86303 16.7795 1.45605 11.3433 1.45605C5.90698 1.45605 1.5 5.86303 1.5 11.2993C1.5 16.7356 5.90698 21.1426 11.3433 21.1426Z"
+                  stroke="#4EAF4E"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+              Capitalize on low hanging fruit to identify a ballpark value added
+              activity to beta test override the digital.
+            </li>
+          </ul>
         </div>
         <Image src={HeroSectionImage} alt="Billede af kvinde" />
       </section>
@@ -97,6 +147,23 @@ import HeroSectionImage from "../images/home-hero-section.jpg";
       max-height: 300px;
       object-fit: cover;
       border-radius: var(--rounding-m);
+    }
+
+    ul {
+      margin-top: var(--spacing-xs);
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-xs);
+
+      li {
+        display: flex;
+        gap: var(--spacing-xs);
+
+        svg {
+          width: 23px;
+          height: 23px;
+        }
+      }
     }
   }
 
