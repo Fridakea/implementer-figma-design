@@ -40,9 +40,31 @@ h5 {
 }
 
 h6 {
+    max-width: 200px;
+    padding: 0 12px;
+    margin-bottom: var(--spacing-xs);
+    border-radius: var(--rounding-s);
+
+    background-color: var(--action-color);
+    color: var(--action-text-color);
+
     font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: var(--spacing-3xs);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+h7 {
+    max-width: 200px;
+    padding: 0 12px;
+    margin-bottom: var(--spacing-xs);
+    border-radius: var(--rounding-s);
+
+    background-color: var(--action-color-2);
+    color: var(--secondary-text-color);
+
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 /* General classnames */
