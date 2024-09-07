@@ -40,7 +40,7 @@ h5 {
 }
 
 h6 {
-    max-width: 200px;
+    max-width: fit-content;
     padding: 0 12px;
     margin-bottom: var(--spacing-xs);
     border-radius: var(--rounding-s);
@@ -54,7 +54,7 @@ h6 {
 }
 
 h7 {
-    max-width: 200px;
+    max-width: fit-content;
     padding: 0 12px;
     margin-bottom: var(--spacing-xs);
     border-radius: var(--rounding-s);
@@ -96,6 +96,10 @@ h7 {
     flex: 1;
 }
 
+.flex-2 {
+    flex: 2;
+}
+
 .align-center {
     align-items: center;
 }
@@ -133,10 +137,18 @@ h7 {
     gap: var(--spacing-xs);
 }
 
+.gap-s {
+    gap: var(--spacing-s);
+}
+
 .gap-m {
     gap: var(--spacing-m);
 }
 
 .gap-l {
     gap: var(--spacing-l);
+}
+
+.gap-xl {
+    gap: var(--spacing-xl);
 }
