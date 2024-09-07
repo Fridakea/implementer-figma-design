@@ -8,21 +8,29 @@ import ValueSection from "../components/ValueSection.astro";
 import VisionSection from "../components/VisionSection.astro";
 import FAQSection from "../components/FAQSection.astro";
 import Newsletter from "../components/Newsletter.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <MainLayout title="About">
-  <HeroSection
-    variant="big"
-    image={AboutImage}
-    title="Services"
-    header="Creative Services For Boost Your Business Growth"
-  />
+  <Header />
 
-  <VisionSection />
+  <main>
+    <HeroSection
+      variant="big"
+      image={AboutImage}
+      title="Services"
+      header="Creative Services For Boost Your Business Growth"
+    />
 
-  <ValueSection variant="light" color="secondary" />
+    <VisionSection />
 
-  <FAQSection />
+    <ValueSection variant="light" color="secondary" />
 
-  <Newsletter />
+    <FAQSection />
+
+    <Newsletter />
+  </main>
+
+  <Footer />
 </MainLayout>
