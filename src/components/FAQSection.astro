@@ -1,0 +1,60 @@
+---
+import Accordion from "./Accordion.astro";
+---
+
+<section class="content">
+  <div class="flex-col align-center justify-center">
+    <h6>FAQ</h6>
+    <h2>Customer Questions</h2>
+
+    <Accordion
+      title="What will happen when I’ve sent my application?"
+      text="Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team and individual achievements."
+    />
+    <Accordion
+      title="Can I get a free trial before I purchase?"
+      text="Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team and individual achievements."
+    />
+    <Accordion
+      title="What should I include in my personal statement?"
+      text="Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team and individual achievements."
+    />
+    <Accordion
+      title="Will membership plans be charged automatically?"
+      text="Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team and individual achievements."
+    />
+    <Accordion
+      title="What will happen when I’ve sent my application?"
+      text="Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team and individual achievements."
+    />
+    <Accordion
+      title="Can I get a free trial before I purchase?"
+      text="Ippsum is the result of synergy between our teams and our customers. Our company culture is focused on excellent productivity, customer satisfaction, respect for team and individual achievements."
+    />
+  </div>
+</section>
+
+<style>
+  .content {
+    padding: var(--spacing-3xl);
+    margin-bottom: var(--spacing-2xl);
+    background-color: var(--primary-color-shade);
+    border-radius: var(--rounding-m);
+
+    & div {
+      max-width: 750px;
+      margin: auto;
+    }
+
+    & h6 {
+      background-color: var(--action-color-2);
+      color: var(--secondary-text-color);
+    }
+  }
+
+  @media (min-width: 769px) {
+    .content {
+      margin-bottom: var(--spacing-3xl);
+    }
+  }
+</style>

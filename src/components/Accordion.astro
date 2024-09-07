@@ -1,0 +1,49 @@
+---
+import PlusIcon from "../icons/PlusIcon.astro";
+
+const { title, text } = Astro.props;
+---
+
+<details>
+  <summary class="flex-row space-between">
+    {title}
+    <PlusIcon />
+  </summary>
+  <p>{text}</p>
+</details>
+
+<style>
+  details {
+    width: 100%;
+    padding: var(--spacing-s) 0;
+    border-bottom: 1px solid var(--primary-color-shade-2);
+
+    & p {
+      margin-top: var(--spacing-s);
+    }
+  }
+
+  summary {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 116%;
+    color: var(--primary-text-header-color);
+  }
+</style>
+
+<script>
+  // Fetch all the details element.
+  const details = document.querySelectorAll("details");
+
+  // Add the onclick listeners.
+  details.forEach((targetDetail) => {
+    targetDetail.addEventListener("click", () => {
+      // Close all the details that are not targetDetail.
+      details.forEach((detail) => {
+        if (detail !== targetDetail) {
+          detail.removeAttribute("open");
+        }
+      });
+    });
+  });
+</script>
