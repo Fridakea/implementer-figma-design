@@ -5,7 +5,7 @@ import CreativeIdeasIcon from "../icons/CreativeIdeasIcon.astro";
 import EasySolutionsIcon from "../icons/EasySolutionsIcon.astro";
 import ExperienceIcon from "../icons/ExperienceIcon.astro";
 import ValueCard from "./ValueCard.astro";
-const { variant } = Astro.props;
+const { variant, color } = Astro.props;
 ---
 
 <section class={variant}>
@@ -20,7 +20,7 @@ const { variant } = Astro.props;
           DevOps.
         </p>
       </div>
-      <Button color="primary" text="Get In Touch" />
+      <Button color={color} text="Get In Touch" />
     </div>
     <div class="mobile-wrap flex-row gap-l">
       <ValueCard
@@ -53,7 +53,7 @@ const { variant } = Astro.props;
 
 <style>
   section {
-    padding: var(--spacing-3xl) 0;
+    padding: var(--spacing-2xl) 0;
   }
 
   .core-values {
@@ -74,6 +74,11 @@ const { variant } = Astro.props;
   /* Classnames for different variants of the section/component */
   .light {
     background-color: var(--primary-color-shade);
+
+    & .primary {
+      background-color: var(--secondary-color);
+      color: var(--secondary-text-color);
+    }
   }
 
   .dark {
@@ -86,6 +91,10 @@ const { variant } = Astro.props;
   }
 
   @media (min-width: 769px) {
+    section {
+      padding: var(--spacing-3xl) 0;
+    }
+
     .core-values {
       margin-bottom: 0;
     }

@@ -1,0 +1,28 @@
+---
+const { number, title } = Astro.props;
+---
+
+<div class="flex-col justify-center align-center">
+  <h1>{number}+</h1>
+  <h5>{title}</h5>
+</div>
+
+<style>
+  div {
+    width: 150px;
+  }
+
+  h1 {
+    margin-bottom: var(--spacing-2xs);
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  @media (min-width: 769px) {
+    h5 {
+      font-size: 1.125rem;
+    }
+  }
+</style>

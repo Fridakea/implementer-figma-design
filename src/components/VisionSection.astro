@@ -1,0 +1,94 @@
+---
+import { Image } from "astro:assets";
+import HeroImage from "../images/home-hero-section.jpg";
+
+import CheckIcon from "../icons/CheckIcon.astro";
+import Counter from "./Counter.astro";
+---
+
+<section class="content">
+  <div class="flex-col">
+    <div class="flex-col pc-flex-row gap-xl">
+      <div class="flex-1">
+        <h6>Our Vision</h6>
+        <h2>Turn your ideas into reality.</h2>
+        <p>
+          Capitalize on low hanging fruit to identify a ballpark value added
+          activity beta test. Override the digital divide with additional from
+          DevOps.
+        </p>
+        <ul>
+          <li>
+            <div>
+              <CheckIcon />
+            </div>
+            Bring to the table win-win survival strategies to ensure proactive domination.
+            At the end of the day.
+          </li>
+          <li>
+            <div>
+              <CheckIcon />
+            </div>
+            Capitalize on low hanging fruit to identify a ballpark value added activity
+            to beta test override the digital.
+          </li>
+        </ul>
+      </div>
+      <div class="flex-1">
+        <Image src={HeroImage} alt="Billede af en kvinde" />
+      </div>
+    </div>
+
+    <div class="counter-section flex-row space-around">
+      <Counter number="1128" title="Successful Work" />
+      <Counter number="908" title="Team member" />
+      <Counter number="258" title="Happy Customers" />
+      <Counter number="564" title="Creative Idea" />
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  h6 {
+    background-color: var(--action-color-2);
+    color: var(--secondary-text-color);
+  }
+
+  img {
+    width: 100%;
+    max-height: 350px;
+    border-radius: var(--rounding-s);
+    object-fit: cover;
+  }
+
+  ul {
+    margin-top: var(--spacing-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+
+    & li {
+      display: flex;
+      gap: var(--spacing-xs);
+    }
+  }
+
+  .gap-xl {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .counter-section {
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-l);
+  }
+
+  @media (min-width: 769px) {
+    section {
+      margin-bottom: var(--spacing-3xl);
+    }
+  }
+</style>

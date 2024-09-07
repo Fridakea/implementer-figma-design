@@ -1,5 +1,6 @@
 :root {
     /* Variables for colors */
+    --primary-color-tint: rgba(255, 255, 255, 0.85);
     --primary-color: #FFFFFF;
     --primary-color-shade: #F5F5F5;
     --primary-color-shade-2: #EBEBEB; 

@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import HeroSectionImage from "../images/home-hero-section.jpg";
+import HeroImage from "../images/home-hero-section.jpg";
 import Image2 from "../images/image-2.jpg";
 
 import MainLayout from "../layouts/MainLayout.astro";
@@ -19,7 +19,7 @@ import ContactUsSection from "../components/ContactUsSection.astro";
   <Header />
 
   <main>
-    <section class="hero-section pc-flex-row">
+    <section class="hero pc-flex-row">
       <div class="description-section flex-col">
         <h1>Adam Buschemia Business Consultant</h1>
         <p>
@@ -29,7 +29,7 @@ import ContactUsSection from "../components/ContactUsSection.astro";
         <Button color="primary" text="Book A Meeting" />
       </div>
       <div class="image-section pc-only">
-        <Image src={HeroSectionImage} alt="Billede af en kvinde" />
+        <Image src={HeroImage} alt="Billede af en kvinde" />
       </div>
     </section>
 
@@ -85,7 +85,7 @@ import ContactUsSection from "../components/ContactUsSection.astro";
 
     <ExperienceSection />
 
-    <ValueSection variant="dark" />
+    <ValueSection variant="dark" color="primary" />
 
     <ContactUsSection />
 
@@ -96,7 +96,7 @@ import ContactUsSection from "../components/ContactUsSection.astro";
 </MainLayout>
 
 <style>
-  .hero-section {
+  .hero {
     width: 100%;
     background-color: var(--secondary-color);
     margin-bottom: var(--spacing-2xl);
@@ -136,7 +136,7 @@ import ContactUsSection from "../components/ContactUsSection.astro";
     }
 
     & ul {
-      margin-top: var(--spacing-xs);
+      margin-top: var(--spacing-m);
       display: flex;
       flex-direction: column;
       gap: var(--spacing-xs);
@@ -149,7 +149,7 @@ import ContactUsSection from "../components/ContactUsSection.astro";
   }
 
   @media (min-width: 769px) {
-    .hero-section {
+    .hero {
       height: 616px;
 
       & .description-section {
