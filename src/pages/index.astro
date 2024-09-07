@@ -1,10 +1,12 @@
 ---
 import { Image } from "astro:assets";
+import HeroSectionImage from "../images/home-hero-section.jpg";
+import Image2 from "../images/image-2.jpg";
+
 import MainLayout from "../layouts/MainLayout.astro";
 import Header from "../components/Header.astro";
 import HomeInfoCards from "../components/HomeInfoCards.astro";
 import Button from "../components/Button.astro";
-import HeroSectionImage from "../images/home-hero-section.jpg";
 import CheckIcon from "../icons/CheckIcon.astro";
 import ExperienceSection from "../components/ExperienceSection.astro";
 import ValueSection from "../components/ValueSection.astro";
@@ -76,7 +78,7 @@ import Footer from "../components/Footer.astro";
             </li>
           </ul>
         </div>
-        <Image src={HeroSectionImage} alt="Billede af kvinde" />
+        <Image src={Image2} alt="Billede af kvinde" />
       </section>
     </section>
 
@@ -124,8 +126,9 @@ import Footer from "../components/Footer.astro";
     margin-bottom: var(--spacing-3xl);
 
     & img {
-      max-height: 300px;
+      max-height: 400px;
       object-fit: cover;
+      object-position: 0 30%;
       border-radius: var(--rounding-m);
     }
 
