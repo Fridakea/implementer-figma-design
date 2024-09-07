@@ -8,11 +8,12 @@ const { text, color } = Astro.props;
   button {
     padding: 16px 32px;
     border-radius: var(--rounding-l);
+    font-weight: 600;
   }
 
   .primary {
     background-color: var(--primary-color);
-    color: var(--primary-text-p-color);
+    color: var(--action-text-color);
   }
 
   .secondary {
@@ -22,6 +23,6 @@ const { text, color } = Astro.props;
 
   .action {
     background-color: var(--action-color);
-    color: var(--secondary-text-color);
+    color: var(--action-text-color);
   }
 </style>

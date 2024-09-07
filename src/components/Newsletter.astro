@@ -1,0 +1,44 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<section>
+  <div class="box content flex-col pc-flex-row space-between gap-l">
+    <div class="flex-col align-center pc-align-start">
+      <h3>Subscribe Our Newsletter</h3>
+      <p>Build stronger Customer Relationships with Consultalk</p>
+    </div>
+    <div class="flex-col pc-flex-row gap-m align-center">
+      <div class="email">your mail address</div>
+      <Button color="action" text="Subscribe" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .box {
+    padding: var(--spacing-xl);
+    margin-top: var(--spacing-3xl);
+    margin-bottom: var(--spacing-3xl);
+    border-radius: var(--rounding-s);
+    background-color: var(--secondary-color);
+
+    & h3,
+    p {
+      color: var(--secondary-text-color);
+    }
+  }
+
+  .email {
+    width: 300px;
+    padding: 22px var(--spacing-l);
+    border-radius: var(--rounding-l);
+    background-color: var(--primary-color);
+  }
+
+  @media (min-width: 769px) {
+    .box {
+      padding: var(--spacing-3xl);
+    }
+  }
+</style>

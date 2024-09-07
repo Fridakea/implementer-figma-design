@@ -1,13 +1,17 @@
 ---
 import Button from "../components/Button.astro";
+import BestFeaturesIcon from "../icons/BestFeaturesIcon.astro";
+import CreativeIdeasIcon from "../icons/CreativeIdeasIcon.astro";
+import EasySolutionsIcon from "../icons/EasySolutionsIcon.astro";
+import ExperienceIcon from "../icons/ExperienceIcon.astro";
 import ValueCard from "./ValueCard.astro";
 const { variant } = Astro.props;
 ---
 
 <section class={variant}>
   <div class="content">
-    <div class="flex-row space-between mb-xl">
-      <div>
+    <div class="flex-col pc-flex-row space-between mb-xl">
+      <div class="core-values">
         <h6>Growing With our clients</h6>
         <h2>Our core values & principles</h2>
         <p>
@@ -16,10 +20,33 @@ const { variant } = Astro.props;
           DevOps.
         </p>
       </div>
-      <Button color="primary" buttonText="Get In Touch" />
+      <Button color="primary" text="Get In Touch" />
     </div>
-    <div>
-      <ValueCard />
+    <div class="mobile-wrap flex-row gap-l">
+      <ValueCard
+        header="Creative Ideas"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget accumsan augue Donec aliquam."
+      >
+        <CreativeIdeasIcon slot="icon" />
+      </ValueCard>
+      <ValueCard
+        header="Best Features"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      >
+        <BestFeaturesIcon slot="icon" />
+      </ValueCard>
+      <ValueCard
+        header="Experience"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget accumsan augue Donec aliquam."
+      >
+        <ExperienceIcon slot="icon" />
+      </ValueCard>
+      <ValueCard
+        header="Easy Solutions"
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      >
+        <EasySolutionsIcon slot="icon" />
+      </ValueCard>
     </div>
   </div>
 </section>
@@ -33,6 +60,22 @@ const { variant } = Astro.props;
     }
   }
 
+  .core-values {
+    max-width: 600px;
+    margin-bottom: var(--spacing-l);
+  }
+
+  .pc-flex-row.space-between {
+    align-items: flex-end;
+  }
+
+  .mobile-wrap {
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+
+  /* Classnames for different variants of the section/component */
   .light {
     background-color: var(--primary-color-shade);
   }
@@ -43,6 +86,16 @@ const { variant } = Astro.props;
     & h2,
     p {
       color: var(--secondary-text-color);
+    }
+  }
+
+  @media (min-width: 769px) {
+    .core-values {
+      margin-bottom: 0;
+    }
+
+    .flex-row.gap-l {
+      flex-wrap: nowrap;
     }
   }
 </style>

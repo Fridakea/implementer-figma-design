@@ -8,10 +8,13 @@ import HeroSectionImage from "../images/home-hero-section.jpg";
 import CheckIcon from "../icons/CheckIcon.astro";
 import ExperienceSection from "../components/ExperienceSection.astro";
 import ValueSection from "../components/ValueSection.astro";
+import Newsletter from "../components/Newsletter.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <MainLayout title="Forside">
   <Header />
+
   <main>
     <section class="hero-section pc-flex-row">
       <div class="description-section flex-col">
@@ -20,7 +23,7 @@ import ValueSection from "../components/ValueSection.astro";
           Get help from Alex Moore, a professional business coach with advanced
           experience on growth and business scaling.
         </p>
-        <Button color="primary" buttonText="Book A Meeting" />
+        <Button color="primary" text="Book A Meeting" />
       </div>
       <div class="image-section pc-only">
         <Image src={HeroSectionImage} alt="Billede af en kvinde" />
@@ -65,7 +68,9 @@ import ValueSection from "../components/ValueSection.astro";
               domination. At the end of the day.
             </li>
             <li>
-              <CheckIcon />
+              <div>
+                <CheckIcon />
+              </div>
               Capitalize on low hanging fruit to identify a ballpark value added
               activity to beta test override the digital.
             </li>
@@ -78,7 +83,11 @@ import ValueSection from "../components/ValueSection.astro";
     <ExperienceSection />
 
     <ValueSection variant="dark" />
+
+    <Newsletter />
   </main>
+
+  <Footer />
 </MainLayout>
 
 <style>

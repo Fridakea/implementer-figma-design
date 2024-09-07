@@ -1,10 +1,12 @@
 ---
 import ArrowIcon from "../icons/ArrowIcon.astro";
+const { header, text, icon } = Astro.props;
 ---
 
 <div class="card flex-col">
-  <h5>titel</h5>
-  <p>Lorem</p>
+  <slot name="icon" />
+  <h5 class="mt-l">{header}</h5>
+  <p>{text}</p>
   <div class="flex-row align-center gap-xs">
     <h5>Read More</h5>
     <ArrowIcon />
@@ -13,8 +15,9 @@ import ArrowIcon from "../icons/ArrowIcon.astro";
 
 <style>
   .card {
-    width: clamp(28%, 225px, 50%);
-    padding: var(--spacing-l) var(--spacing-m);
+    width: clamp(25%, 225px, 45%);
+    height: auto;
+    padding: var(--spacing-xl) var(--spacing-m);
     background-color: var(--primary-color);
     border-radius: var(--rounding-s);
 

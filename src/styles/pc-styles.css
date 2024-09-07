@@ -17,4 +17,8 @@
         display: flex;
         flex-direction: row;
     }
+
+    .pc-align-start {
+        align-items: flex-start;
+    }
 }

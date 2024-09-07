@@ -125,6 +125,10 @@ h7 {
     margin-bottom: var(--spacing-3xl);
 }
 
+.mt-l {
+    margin-top: var(--spacing-l);
+}
+
 .gap-xs {
     gap: var(--spacing-xs);
 }

@@ -29,6 +29,10 @@ import BranchingChart from "../components/BranchingChart.astro";
 </section>
 
 <style>
+  h4 {
+    font-size: 1rem;
+  }
+
   section {
     padding: var(--spacing-3xl) 0;
     background-color: var(--action-color);
@@ -41,5 +45,11 @@ import BranchingChart from "../components/BranchingChart.astro";
 
   p {
     color: var(--action-text-color);
+  }
+
+  @media (min-width: 769px) {
+    h4 {
+      font-size: 1.5rem;
+    }
   }
 </style>
