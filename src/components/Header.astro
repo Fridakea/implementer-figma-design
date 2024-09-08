@@ -2,8 +2,138 @@
 import LoginButton from "./LoginButton.astro";
 ---
 
+<header>
+  <nav>
+    <div class="mobile-menu">
+      <div class="flex-col justify-center align-center">
+        <a class="menu-link" href="/">AskExperts</a>
+      </div>
+
+      <a class="menu-link" href="/">Home</a>
+      <a class="menu-link" href="/case-study">Case Study</a>
+      <a class="menu-link" href="/team">Team</a>
+      <a class="menu-link" href="/about">About</a>
+    </div>
+
+    <div class="burger-icon">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </nav>
+</header>
+
+<style>
+  /* Styling header */
+  header {
+    height: 75px;
+    width: 100%;
+  }
+
+  nav {
+    position: fixed;
+    height: 75px;
+    width: 100%;
+    padding: var(--spacing-l);
+    background-color: var(--secondary-color-tint);
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    & a {
+      text-decoration: none;
+      color: var(--secondary-text-color);
+    }
+  }
+
+  /* styling the mobile menu */
+  .mobile-menu {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    z-index: 40;
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: var(--secondary-color);
+    transition: 0.3s;
+
+    text-align: center;
+  }
+
+  .mobile-menu.active {
+    left: 0;
+  }
+
+  /* Styling the burger-menu icon */
+  .burger-icon {
+    position: absolute;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: end;
+
+    & .bar {
+      width: 40px;
+      height: 3px;
+      background-color: var(--secondary-text-color);
+      border-radius: 3px;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+    }
+
+    & :nth-child(2) {
+      margin: 12px 0 12px 5px;
+    }
+
+    & :nth-child(3) {
+      margin-bottom: 5px;
+    }
+  }
+
+  .burger-icon.active {
+    position: fixed;
+
+    & .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .bar:nth-child(1) {
+      transform: translateY(15px) rotate(45deg);
+    }
+    .bar:nth-child(3) {
+      transform: translateY(-15px) rotate(-45deg);
+    }
+  }
+</style>
+
+<script>
+  /* Burger menu */
+  const burgerIcon = document.querySelector(".burger-icon");
+  const burgerMenu = document.querySelector(".mobile-menu");
+
+  burgerIcon.addEventListener("click", () => {
+    burgerIcon.classList.toggle("active");
+    burgerMenu.classList.toggle("active");
+  });
+
+  /* Remove menu after one of the links have been clicked */
+  document.querySelectorAll(".menu-link").forEach((n) =>
+    n.addEventListener("click", () => {
+      burgerIcon.classList.remove("active");
+      burgerMenu.classList.remove("active");
+    })
+  );
+</script>
+
+<!-- 
 <nav>
-  <div class="content flex-row align-center space-between">
+  <div class="content flex-row align-center space-between pc-only">
     <a href="/"><h3>AskExperts</h3></a>
     <div class="flex-row gap-l">
       <a href="/">Home</a>
@@ -27,3 +157,4 @@ import LoginButton from "./LoginButton.astro";
     }
   }
 </style>
+-->
