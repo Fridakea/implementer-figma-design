@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import CaseStudyImage from "../images/case-study-image.png";
 import Image7 from "../images/image-7.png";
+import Image8 from "../images/image-8.jpg";
 
 import MainLayout from "../layouts/MainLayout.astro";
 import HeroSection from "../components/HeroSection.astro";
@@ -23,7 +24,7 @@ import Newsletter from "../components/Newsletter.astro";
     />
 
     <section class="content">
-      <Image src={Image7} alt="Billede" />
+      <Image src={Image7} alt="Image of pc with code" />
       <div class="study-card flex-col pc-flex-row">
         <div class="flex-row case-flex">
           <div class="flex-col">
@@ -86,6 +87,23 @@ import Newsletter from "../components/Newsletter.astro";
           pontificate installed base portals after maintainable products
           completely pursue scalable customer service.
         </p>
+        <Image src={Image8} alt="Image of two girls" />
+
+        <h3>Project result</h3>
+        <p>
+          Leverage agile frameworks to provide a robust synopsis for high level
+          overviews. Iterative approaches to corporate strategy foster
+          collaborative thinking to further the overall value proposition.
+          Organically grow the holistic world view of disruptive innovation via
+          workplace diversity and empowerment.
+        </p>
+        <p>
+          Bring to the table win-win survival strategies to ensure proactive
+          domination. At the end of the day, going forward, a new normal that
+          has evolved from generation X is on the runway heading towards a
+          streamlined cloud solution. User generated content in real-time will
+          have multiple touchpoints for offshoring.
+        </p>
       </div>
     </section>
 
@@ -97,7 +115,8 @@ import Newsletter from "../components/Newsletter.astro";
 
 <style>
   .content img {
-    max-height: 450px;
+    width: 100%;
+    max-height: 200px;
     border-radius: var(--rounding-s);
     position: relative;
     z-index: -1;
@@ -107,12 +126,13 @@ import Newsletter from "../components/Newsletter.astro";
   .study-card {
     max-width: 1030px;
     margin: auto;
-    margin-top: -50px;
+    margin: -24px -16px;
     margin-bottom: var(--spacing-2xl);
     padding: var(--spacing-l);
     border-radius: var(--rounding-m);
     background-color: var(--secondary-color);
 
+    gap: var(--spacing-l);
     align-items: center;
 
     & * {
@@ -122,35 +142,61 @@ import Newsletter from "../components/Newsletter.astro";
 
   .case-flex {
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
+    text-align: center;
   }
 
   .project-overview {
     max-width: 800px;
     margin: auto;
 
+    & p {
+      margin-bottom: var(--spacing-m);
+    }
+
     & ul {
-      margin: var(--spacing-m);
-      list-style-type: circle;
+      margin: var(--spacing-s);
+      list-style: inside;
 
       & li {
         margin-bottom: var(--spacing-s);
       }
     }
+
+    & h3 {
+      margin: var(--spacing-m) 0;
+    }
+
+    & img {
+      height: auto;
+      aspect-ratio: 2 / 1;
+      margin: auto;
+      margin-bottom: var(--spacing-m);
+      border-radius: 0;
+    }
   }
 
   @media (min-width: 769px) {
+    .content img {
+      max-height: 450px;
+    }
+
     .study-card {
+      margin: -50px auto var(--spacing-3xl) auto;
       padding: var(--spacing-2xl);
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: var(--spacing-3xl);
     }
 
     .case-flex {
       width: 74%;
       justify-content: flex-start;
       gap: var(--spacing-3xl);
+      text-align: start;
+    }
+
+    .project-overview img {
+      max-width: 700px;
     }
   }
 </style>
