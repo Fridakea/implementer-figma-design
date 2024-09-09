@@ -5,14 +5,14 @@ import LoginButton from "./LoginButton.astro";
 <header>
   <nav>
     <div class="mobile-menu">
-      <div class="flex-col justify-center align-center">
-        <a class="menu-link" href="/">AskExperts</a>
-      </div>
-
       <a class="menu-link" href="/">Home</a>
       <a class="menu-link" href="/case-study">Case Study</a>
       <a class="menu-link" href="/team">Team</a>
       <a class="menu-link" href="/about">About</a>
+    </div>
+
+    <div class="logo">
+      <a class="menu-link" href="/"><h3>AskExperts</h3></a>
     </div>
 
     <div class="burger-icon">
@@ -70,6 +70,18 @@ import LoginButton from "./LoginButton.astro";
     left: 0;
   }
 
+  .logo {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 100px;
+    height: 100px;
+
+    & h3 {
+      color: var(--secondary-text-color);
+    }
+  }
+
   /* Styling the burger-menu icon */
   .burger-icon {
     position: absolute;
@@ -81,7 +93,7 @@ import LoginButton from "./LoginButton.astro";
 
     & .bar {
       width: 40px;
-      height: 3px;
+      height: 2px;
       background-color: var(--secondary-text-color);
       border-radius: 3px;
       position: relative;
@@ -89,7 +101,7 @@ import LoginButton from "./LoginButton.astro";
     }
 
     & :nth-child(2) {
-      margin: 12px 0 12px 5px;
+      margin: var(--spacing-xs) 0;
     }
 
     & :nth-child(3) {
@@ -104,10 +116,10 @@ import LoginButton from "./LoginButton.astro";
       opacity: 0;
     }
     .bar:nth-child(1) {
-      transform: translateY(15px) rotate(45deg);
+      transform: translateY(14px) rotate(45deg);
     }
     .bar:nth-child(3) {
-      transform: translateY(-15px) rotate(-45deg);
+      transform: translateY(-14px) rotate(-45deg);
     }
   }
 </style>
