@@ -20,7 +20,7 @@ import ContactUsSection from "../components/ContactUsSection.astro";
 
   <main>
     <section class="hero pc-flex-row">
-      <div class="description-section flex-col">
+      <div class="description-section flex-col flex-1">
         <h1>Adam Buschemia Business Consultant</h1>
         <p>
           Get help from Alex Moore, a professional business coach with advanced
@@ -28,13 +28,13 @@ import ContactUsSection from "../components/ContactUsSection.astro";
         </p>
         <Button color="primary" text="Book A Meeting" />
       </div>
-      <div class="image-section pc-only">
+      <div class="image-section pc-only flex-1">
         <Image src={HeroImage} alt="Image of CEO of AskExperts" />
       </div>
     </section>
 
     <section class="content">
-      <div class="flex-col gap-m pc-flex-row justify-center mb-3xl">
+      <div class="info-cards flex-col gap-m pc-flex-row justify-center mb-3xl">
         <HomeInfoCards
           heading="Finance & Restructuring"
           text="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling."
@@ -154,11 +154,17 @@ import ContactUsSection from "../components/ContactUsSection.astro";
 
       & .description-section {
         padding: 0;
-        margin-right: var(--spacing-3xl);
-        flex: 1;
         align-items: flex-end;
         justify-content: center;
+
+        & > * {
+          margin-right: var(--spacing-3xl);
+        }
       }
+    }
+
+    .info-cards {
+      margin-top: -200px;
     }
 
     .expect-section {

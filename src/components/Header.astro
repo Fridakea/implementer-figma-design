@@ -20,6 +20,17 @@ import LoginButton from "./LoginButton.astro";
       <span class="bar"></span>
       <span class="bar"></span>
     </div>
+
+    <div class="pc-header pc-only content">
+      <a href="/"><h3>AskExperts</h3></a>
+      <div class="flex-row gap-l">
+        <a href="/">Home</a>
+        <a href="/case-study">Case Study</a>
+        <a href="/team">Team</a>
+        <a href="/about">About</a>
+      </div>
+      <LoginButton />
+    </div>
   </nav>
 </header>
 
@@ -120,6 +131,37 @@ import LoginButton from "./LoginButton.astro";
     }
     .bar:nth-child(3) {
       transform: translateY(-14px) rotate(-45deg);
+    }
+  }
+
+  @media (min-width: 769px) {
+    header {
+      height: auto;
+    }
+
+    nav {
+      height: auto;
+      padding: var(--spacing-l);
+
+      position: relative;
+    }
+
+    .logo,
+    .burger-icon {
+      display: none;
+    }
+
+    .pc-header {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      & h3 {
+        color: var(--secondary-text-color);
+      }
     }
   }
 </style>
