@@ -1,0 +1,65 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Newsletter from "../../components/Newsletter.astro";
+
+export async function getStaticPaths() {
+  const data = await fetch(
+    "https://raw.githubusercontent.com/daviatkea/frontend-design/main/resources/json/employees.json",
+    {
+      method: "GET",
+    }
+  ).then((response) => response.json());
+
+  return data.map((employee) => {
+    return {
+      params: { slug: employee.slug },
+      props: { employee },
+    };
+  });
+}
+
+const { slug } = Astro.params;
+const { employee } = Astro.props;
+---
+
+<MainLayout>
+  <Header />
+
+  <main class="content">
+    <section class="team-single-section">
+      <div class="personal-details">
+        <div class="name-section">
+          <h3>{employee.name}</h3>
+          <h5>{employee.title}</h5>
+          <div class="some"></div>
+
+          <p>{employee.description}</p>
+        </div>
+      </div>
+      <img src={employee.img} alt=`Image of ${employee.name}` />
+      <div class="general-details">
+        <h3>Past experience</h3>
+        <p>
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit sed do.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.
+        </p>
+      </div>
+    </section>
+
+    <Newsletter />
+  </main>
+
+  <Footer />
+</MainLayout>
