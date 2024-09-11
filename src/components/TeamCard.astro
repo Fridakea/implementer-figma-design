@@ -1,0 +1,87 @@
+---
+import FacebookIcon from "../assets/icons/FacebookIcon.astro";
+import InstagramIcon from "../assets/icons/InstagramIcon.astro";
+import TwitterIcon from "../assets/icons/TwitterIcon.astro";
+
+const { image, name, jobTitle, variant } = Astro.props;
+---
+
+<div class="card">
+  <div class="image">
+    <img src={image} alt=`Billede af ${name}` />
+    <p class={variant}>{jobTitle}</p>
+  </div>
+  <h3>{name}</h3>
+  <p>
+    Leverage agile frameworks to provide a robust synopsis for high level
+    overviews.
+  </p>
+  <div class="some">
+    <InstagramIcon />
+    <FacebookIcon />
+    <TwitterIcon />
+  </div>
+</div>
+
+<style>
+  .card {
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-s);
+
+    & .image {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1 / 1;
+
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+        border-radius: var(--rounding-s);
+        z-index: -1;
+      }
+
+      & > p {
+        padding: var(--spacing-3xs) var(--spacing-s);
+        margin: var(--spacing-m) var(--spacing-s);
+        border-radius: var(--rounding-m);
+        font-weight: 600;
+      }
+    }
+
+    & > p {
+      text-align: center;
+    }
+
+    & h3 {
+      margin-top: var(--spacing-2xs);
+      margin-bottom: 0;
+    }
+  }
+
+  .some {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-s);
+  }
+
+  /* classnames for different variants */
+  .action {
+    background-color: var(--action-color);
+    color: var(--action-text-color);
+  }
+
+  .secondary {
+    background-color: var(--secondary-color);
+    color: var(--secondary-text-color);
+  }
+</style>

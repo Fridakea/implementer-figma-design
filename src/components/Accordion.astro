@@ -17,6 +17,7 @@ const { title, text } = Astro.props;
     width: 100%;
     padding: var(--spacing-s) 0;
     border-bottom: 1px solid var(--primary-color-shade-2);
+    cursor: pointer;
 
     & p {
       margin-top: var(--spacing-s);
@@ -28,6 +29,10 @@ const { title, text } = Astro.props;
     font-weight: 500;
     line-height: 116%;
     color: var(--primary-text-header-color);
+  }
+
+  summary:hover {
+    text-decoration: underline;
   }
 </style>
 
