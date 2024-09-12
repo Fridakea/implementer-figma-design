@@ -153,3 +153,21 @@ p {
 .gap-xl {
     gap: var(--spacing-xl);
 }
+
+/* Specifik styling for pattern */
+.action-2-pattern {
+    border-radius: var(--rounding-s);
+    background-color: var(--action-color-2);
+
+    position: absolute;
+    z-index: -1;
+}
+
+.dot-pattern {
+    aspect-ratio: 1 / 1;
+    background-image: url(../assets/images/pattern.webp);
+    background-size: cover;
+
+    position: absolute;
+    z-index: -2;
+}

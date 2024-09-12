@@ -21,6 +21,8 @@ import ContactUsSection from "../components/ContactUsSection.astro";
   <main>
     <section class="hero pc-flex-row">
       <div class="description-section flex-col flex-1">
+        <div class="dot-pattern"></div>
+        <div class="dot-pattern"></div>
         <h1>Adam Buschemia Business Consultant</h1>
         <p>
           Get help from Alex Moore, a professional business coach with advanced
@@ -97,13 +99,17 @@ import ContactUsSection from "../components/ContactUsSection.astro";
 
 <style>
   .hero {
+    position: relative;
     width: 100%;
     background-color: var(--secondary-color);
     margin-bottom: var(--spacing-2xl);
+    z-index: -2;
 
     & .description-section {
+      position: relative;
       align-items: center;
       padding: 15%;
+      z-index: -2;
 
       & * {
         max-width: 500px;
@@ -112,6 +118,18 @@ import ContactUsSection from "../components/ContactUsSection.astro";
 
       & .primary {
         align-self: flex-start;
+      }
+
+      & :first-child {
+        width: 235px;
+        top: -150px;
+        right: -100px;
+      }
+
+      & :nth-child(2) {
+        width: 30%;
+        bottom: 0;
+        left: -100px;
       }
     }
   }
@@ -159,6 +177,18 @@ import ContactUsSection from "../components/ContactUsSection.astro";
 
         & > * {
           margin-right: var(--spacing-3xl);
+        }
+
+        & :first-child {
+          top: -150px;
+          right: -250px;
+        }
+
+        & :nth-child(2) {
+          width: 260px;
+          height: 260px;
+          top: 150px;
+          left: -100px;
         }
       }
     }

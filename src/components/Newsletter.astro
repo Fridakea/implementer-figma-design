@@ -12,16 +12,39 @@ import Button from "../components/Button.astro";
       <div class="email">your mail address</div>
       <Button color="action" text="Subscribe" />
     </div>
+
+    <div class="dot-pattern"></div>
+    <div class="action-2-pattern"></div>
   </div>
 </section>
 
 <style>
   .box {
+    position: relative;
     padding: var(--spacing-xl);
     margin-top: var(--spacing-2xl);
     margin-bottom: var(--spacing-3xl);
     border-radius: var(--rounding-s);
     background-color: var(--secondary-color);
+    overflow: hidden;
+    z-index: -2;
+
+    & .dot-pattern {
+      width: 360px;
+      transform: rotate(43.6deg);
+
+      right: -165px;
+      top: -305px;
+    }
+
+    & .action-2-pattern {
+      aspect-ratio: 5 / 4;
+      height: 285px;
+      transform: rotate(135deg);
+
+      right: 90%;
+      top: 45%;
+    }
 
     & h3,
     p {
@@ -41,6 +64,16 @@ import Button from "../components/Button.astro";
       padding: var(--spacing-3xl);
       margin-top: var(--spacing-3xl);
       margin-bottom: calc(var(--spacing-xl) * 3);
+
+      & .dot-pattern {
+        right: -140px;
+        top: -200px;
+      }
+
+      & .action-2-pattern {
+        right: -100px;
+        top: 235px;
+      }
     }
   }
 </style>

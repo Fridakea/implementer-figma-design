@@ -45,6 +45,8 @@ import TimeIcon from "../assets/icons/TimeIcon.astro";
 
   <div class="image-grid flex-1-6">
     <Image src={Image3} alt="Image of female employee" />
+    <div class="action-2-pattern"></div>
+    <div class="dot-pattern"></div>
     <Image src={Image4} alt="Image of two employees working" />
     <Image src={Image5} alt="Image of working progress at AskExperts" />
   </div>
@@ -56,6 +58,7 @@ import TimeIcon from "../assets/icons/TimeIcon.astro";
   }
 
   .image-grid {
+    position: relative;
     width: clamp(75%, 650px, 100%);
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -73,14 +76,40 @@ import TimeIcon from "../assets/icons/TimeIcon.astro";
       grid-row: 1 / 3;
     }
 
-    & :nth-child(n + 1) {
+    & :nth-child(n + 4) {
       aspect-ratio: 4 / 3;
+    }
+
+    & .action-2-pattern {
+      height: 165px;
+      width: 40%;
+      bottom: -30px;
+      left: -16px;
+    }
+
+    & .dot-pattern {
+      width: 42%;
+      top: 20px;
+      right: -16px;
+      background-size: 165%;
     }
   }
 
   @media (min-width: 769px) {
     .image-grid {
       gap: var(--spacing-m);
+
+      & .action-2-pattern {
+        width: 50%;
+        left: -55px;
+      }
+
+      & .dot-pattern {
+        width: 49%;
+        top: -40px;
+        right: -75px;
+        background-size: 100%;
+      }
     }
 
     .gap-xl {
