@@ -1,15 +1,20 @@
 ---
+import { Image } from "astro:assets";
 import FacebookIcon from "../assets/icons/FacebookIcon.astro";
 import InstagramIcon from "../assets/icons/InstagramIcon.astro";
 import TwitterIcon from "../assets/icons/TwitterIcon.astro";
 
 const { link, image, name, jobTitle, variant } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/images/*.{jpeg,jpg,png,gif,webp}"
+);
+const profileImage = await images[image]();
 ---
 
 <section class="flex-col align-center">
   <a class="card" href={link}>
     <div class="image">
-      <img src={image} alt=`Billede af ${name}` />
+      <img src={profileImage.default.src} alt=`Billede af ${name}` />
       <p class={variant}>{jobTitle}</p>
     </div>
     <h3>{name}</h3>
