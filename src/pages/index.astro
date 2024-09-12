@@ -28,7 +28,9 @@ import ContactUsSection from "../components/ContactUsSection.astro";
           Get help from Alex Moore, a professional business coach with advanced
           experience on growth and business scaling.
         </p>
-        <Button color="primary" text="Book A Meeting" />
+        <div class="flex-row justify-start">
+          <Button color="primary" text="Book A Meeting" />
+        </div>
       </div>
       <div class="image-section pc-only flex-1">
         <Image src={HeroImage} alt="Image of CEO of AskExperts" />
@@ -119,8 +121,8 @@ import ContactUsSection from "../components/ContactUsSection.astro";
         color: var(--secondary-text-color);
       }
 
-      & .primary {
-        align-self: flex-start;
+      & p {
+        margin-bottom: var(--spacing-l);
       }
 
       & :first-child {
@@ -133,6 +135,10 @@ import ContactUsSection from "../components/ContactUsSection.astro";
         width: 30%;
         bottom: 0;
         left: -100px;
+      }
+
+      & :nth-child(6) {
+        margin-right: 0;
       }
     }
   }
@@ -200,6 +206,10 @@ import ContactUsSection from "../components/ContactUsSection.astro";
           height: 260px;
           top: 150px;
           left: -100px;
+        }
+
+        & :nth-child(6) {
+          margin-right: var(--spacing-3xl);
         }
       }
     }
