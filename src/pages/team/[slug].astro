@@ -3,6 +3,10 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import Newsletter from "../../components/Newsletter.astro";
+import FacebookIcon from "../../assets/icons/FacebookIcon.astro";
+import InstagramIcon from "../../assets/icons/InstagramIcon.astro";
+import TwitterIcon from "../../assets/icons/TwitterIcon.astro";
+import LinkdinIcon from "../../assets/icons/LinkdinIcon.astro";
 
 export async function getStaticPaths() {
   const data = await fetch(
@@ -20,17 +24,18 @@ export async function getStaticPaths() {
   });
 }
 
+interface Props {
+  employee: any;
+  picture: string;
+}
+
 const { slug } = Astro.params;
 const { employee } = Astro.props;
 
-interface Props {
-  employee: any;
-}
-
-import FacebookIcon from "../../assets/icons/FacebookIcon.astro";
-import InstagramIcon from "../../assets/icons/InstagramIcon.astro";
-import TwitterIcon from "../../assets/icons/TwitterIcon.astro";
-import LinkdinIcon from "../../assets/icons/LinkdinIcon.astro";
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/images/*.{jpeg,jpg,png,gif,webp}"
+);
+const profileImage = await images[employee.img]();
 ---
 
 <MainLayout>
@@ -42,7 +47,7 @@ import LinkdinIcon from "../../assets/icons/LinkdinIcon.astro";
         <div class="team-image">
           <div class="dot-pattern"></div>
           <div class="action-2-pattern"></div>
-          <img src={employee.img} alt=`Image of ${employee.name}` />
+          <img src={profileImage.default.src} alt=`Image of ${employee.name}` />
         </div>
 
         <div class="personal-details">
