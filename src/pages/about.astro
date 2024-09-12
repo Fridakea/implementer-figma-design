@@ -10,6 +10,7 @@ import FAQSection from "../components/FAQSection.astro";
 import Newsletter from "../components/Newsletter.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import TeamCardSection from "../components/TeamCardSection.astro";
 ---
 
 <MainLayout title="About">
@@ -27,6 +28,19 @@ import Footer from "../components/Footer.astro";
 
     <ValueSection variant="light" color="secondary" />
 
+    <section class="content team-section">
+      <div class="flex-col">
+        <h6>Our team</h6>
+        <h2>We champion the bold to achieve the extraordinary</h2>
+        <p>
+          Ippsum is the result of synergy between our teams and our customers.
+          Our company culture is focused on excellent productivity, customer
+          satisfaction, respect for team.
+        </p>
+      </div>
+      <TeamCardSection gridVariant="small-grid" />
+    </section>
+
     <FAQSection />
 
     <Newsletter />
@@ -34,3 +48,22 @@ import Footer from "../components/Footer.astro";
 
   <Footer />
 </MainLayout>
+
+<style>
+  .team-section {
+    margin: calc(var(--spacing-xl) * 3) auto;
+
+    & div {
+      max-width: 650px;
+      margin-bottom: var(--spacing-xl);
+
+      & h6 {
+        margin-bottom: var(--spacing-m);
+      }
+
+      & h2 {
+        text-wrap: balance;
+      }
+    }
+  }
+</style>
