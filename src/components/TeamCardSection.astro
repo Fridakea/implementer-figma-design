@@ -1,0 +1,57 @@
+---
+import TeamCard from "./TeamCard.astro";
+---
+
+<section>
+  <div class="team-grid">
+    <TeamCard
+      image="/src/assets/images/sarah.jpg"
+      name="Sarah Jasmine"
+      variant="action"
+      jobTitle="CEO at Company"
+    />
+
+    <TeamCard
+      image="/src/assets/images/john.jpg"
+      name="John Carter"
+      variant="secondary"
+      jobTitle="Manager"
+    />
+
+    <TeamCard
+      image="/src/assets/images/daisy.jpg"
+      name="Daisy Stella"
+      variant="secondary"
+      jobTitle="CEO at Company"
+    />
+  </div>
+</section>
+
+<style>
+  section {
+    max-width: 1200px;
+    margin-inline: auto;
+    container-type: inline-size;
+  }
+
+  .team-grid {
+    margin-bottom: var(--spacing-2xl);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(50px, 1fr));
+    gap: var(--spacing-l);
+  }
+
+  @container (width < 400px) {
+    .team-grid {
+      grid-template-columns: minmax(50px, 1fr);
+    }
+  }
+
+  @container (width > 700px) {
+    .team-grid {
+      margin-bottom: var(--spacing-3xl);
+      grid-template-columns: repeat(3, minmax(200px, 1fr));
+      gap: var(--spacing-xl);
+    }
+  }
+</style>
