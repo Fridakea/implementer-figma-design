@@ -81,6 +81,9 @@ import ContactUsSection from "../components/ContactUsSection.astro";
             </li>
           </ul>
         </div>
+
+        <div class="dot-pattern"></div>
+        <div class="action-2-pattern"></div>
         <Image src={Image2} alt="Image of employees of AskExperts" />
       </section>
     </section>
@@ -144,6 +147,7 @@ import ContactUsSection from "../components/ContactUsSection.astro";
   }
 
   .expect-section {
+    position: relative;
     margin-bottom: var(--spacing-3xl);
 
     & img {
@@ -163,6 +167,13 @@ import ContactUsSection from "../components/ContactUsSection.astro";
         display: flex;
         gap: var(--spacing-xs);
       }
+    }
+
+    & .dot-pattern {
+      width: 75%;
+      height: 50%;
+      bottom: -15%;
+      left: 27%;
     }
   }
 
@@ -207,8 +218,23 @@ import ContactUsSection from "../components/ContactUsSection.astro";
       }
 
       & img {
+        margin-top: var(--spacing-2xl);
         grid-column: 1 / 2;
         grid-row: 1 / 2;
+      }
+
+      & .dot-pattern {
+        width: 325px;
+        height: 70%;
+        bottom: 140px;
+        left: -187%;
+      }
+
+      & .action-2-pattern {
+        width: 47%;
+        height: 37%;
+        bottom: 250px;
+        left: -174%;
       }
     }
   }
