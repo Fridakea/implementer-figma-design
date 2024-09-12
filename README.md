@@ -1,47 +1,61 @@
-# Astro Starter Kit: Minimal
+# Reflektion om implementering af figma design:
 
-```sh
-npm create astro@latest -- --template minimal
+Som opstart på denne opgave var jeg syg, som gjorde at jeg synes at starten var lidt op ad bakke. Samtidig endte denne opagve med at være en ret stor motivation for at komme i gang og se tilbage på det undervisning jeg havde misset.
+
+Jeg startede opgaven ved at lave et komponent af gangen, og dermed dele opgaven op i mere "spiselige" bidder. I forbindelse med det, har jeg særligt haft fokus på at bruge Astro's mulighed for at lave komponenter så meget som muligt. Hvor jeg normalt ville have tendens til at lave flere komponener eller måske struggle lidt med props og at ændre i komponeneter, synes jeg at jeg har fået en meget bedre forståelse af dette.
+_Eksempel nedenfor:_
+
+```javascript
+---
+const { text, color } = Astro.props;
+---
+
+<button class={color}>{text}</button>
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+```css
+/* Classnames for different color variants */
+.primary {
+  background-color: var(--primary-color);
+  color: var(--action-text-color);
+}
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+.secondary {
+  background-color: var(--secondary-color-shade);
+  color: var(--secondary-text-color);
+}
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+.action {
+  background-color: var(--action-color);
+  color: var(--action-text-color);
+}
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+En aha oplevelse som jeg synes jeg havde med denne opgave, var at gøre brug af endnu flere selectore og pseudo selectorer, bl.a. :not(), :nth-child() osv. Derudover har jeg også haft brug nesting ret meget især til at style direkte børn, som er nyt for mig. Begge disse dele synes jeg er super smart og en god måde at style specifikke elementer, uden at gøre brug af classnames eller id'er.
+Derudover synes jeg også at det har været spændende at lære hvordan man kan benytte container queries i stedet for media queries. Det vil jeg helt sikkert bruge mere tid på at lære. _Eksempel nedenfor:_
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```css
+& p:not(:last-child) {
+  margin-bottom: var(--spacing-l);
+}
 
-Any static assets, like images, can be placed in the `public/` directory.
+& > * {
+  margin-right: var(--spacing-3xl);
+}
 
-## 🧞 Commands
+& :nth-child(2) {
+  width: 260px;
+  height: 260px;
+  top: 150px;
+  left: -100px;
+}
+```
 
-All commands are run from the root of the project, from a terminal:
+I forbindelse med den undervisning jeg havde misset, synes jeg at der var en del elementer som jeg havde svært ved, ved opgaven. Jeg nåede bl.a. aldrig til at lave scrolling-container sektionen, da jeg havde svært ved at forstå hvordan det skulle gøres. Jeg havde brugt en del tid på at lave de øvelser som var tilknyttet, og dermed valgte jeg til sidst at komme videre og ville vende tilbage hvis jeg havde tiden.
+Derudover synes jeg også at de forskellige mønstre som var bag diverse elementer har været særligt besværlige at have med at gøre. Nemlig da de skulle se ud på en bestemt måde på pc, men også se godt ud responsivt. Det synes jeg nok er noget jeg har brugt lidt for meget tid på, fremfor nogle andre elementer. _Eksempeler nedenfor_
+![Alt text](/docs/excample-1.png)
+![Alt text](/docs/excample-2.png)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+En tredje svær ting ved denne opgave var at designet kun var til pc. Vi har generelt haft meget fokus på altid at designe og kode mobile first, så det gjorde jeg selvfølgelig også denne gang, men det synes jeg også har skabt nogle bump på vejen. Nemlig da jeg har skulle tage udgangspunkt i pc designet. Så hvis jeg skulle gøre det om, havde jeg nok ikke kodet dette sitet mobile first.
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Alt i alt synes jeg at det har været en super spændende og udfordrende opgave og at jeg har lært nogle brugbare css styling tips, som jeg vil tage med videre til de kommende forløb.
