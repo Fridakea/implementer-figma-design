@@ -3,27 +3,33 @@ import FacebookIcon from "../assets/icons/FacebookIcon.astro";
 import InstagramIcon from "../assets/icons/InstagramIcon.astro";
 import TwitterIcon from "../assets/icons/TwitterIcon.astro";
 
-const { image, name, jobTitle, variant } = Astro.props;
+const { link, image, name, jobTitle, variant } = Astro.props;
 ---
 
-<div class="card">
-  <div class="image">
-    <img src={image} alt=`Billede af ${name}` />
-    <p class={variant}>{jobTitle}</p>
-  </div>
-  <h3>{name}</h3>
-  <p>
-    Leverage agile frameworks to provide a robust synopsis for high level
-    overviews.
-  </p>
-  <div class="some">
-    <InstagramIcon />
-    <FacebookIcon />
-    <TwitterIcon />
-  </div>
-</div>
+<section class="flex-col align-center">
+  <a class="card" href={link}>
+    <div class="image">
+      <img src={image} alt=`Billede af ${name}` />
+      <p class={variant}>{jobTitle}</p>
+    </div>
+    <h3>{name}</h3>
+    <p>
+      Leverage agile frameworks to provide a robust synopsis for high level
+      overviews.
+    </p>
+    <div class="some">
+      <InstagramIcon />
+      <FacebookIcon />
+      <TwitterIcon />
+    </div>
+  </a>
+</section>
 
 <style>
+  a {
+    margin-bottom: var(--spacing-m);
+  }
+
   .card {
     width: 100%;
     display: flex;

@@ -7,6 +7,8 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import HeroSection from "../components/HeroSection.astro";
 import TeamCardSection from "../components/TeamCardSection.astro";
+import Button from "../components/Button.astro";
+import Newsletter from "../components/Newsletter.astro";
 ---
 
 <MainLayout title="Team">
@@ -21,9 +23,40 @@ import TeamCardSection from "../components/TeamCardSection.astro";
     />
 
     <section class="content">
-      <TeamCardSection />
+      <div class="heading-section flex-col pc-flex-row space-between">
+        <div>
+          <h2>Meet Our Great Team</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad
+            minim veniam, quis nostrud exercitation.
+          </p>
+        </div>
+
+        <Button color="secondary" text="Join our team" />
+      </div>
+
+      <TeamCardSection gridVariant="big-grid" />
     </section>
+
+    <Newsletter />
   </main>
 
   <Footer />
 </MainLayout>
+
+<style>
+  .heading-section {
+    margin-bottom: var(--spacing-l);
+    align-items: flex-end;
+
+    > * {
+      margin-bottom: var(--spacing-s);
+    }
+
+    & > div {
+      align-items: flex-start;
+      max-width: 630px;
+    }
+  }
+</style>
