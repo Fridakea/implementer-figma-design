@@ -165,7 +165,7 @@ p {
 
 .dot-pattern {
     aspect-ratio: 1 / 1;
-    background-image: url(../assets/images/pattern.webp);
+    background-image: url(../../public/Img/Pattern.webp);
     background-size: cover;
 
     position: absolute;
