@@ -31,7 +31,7 @@ const { text, color } = Astro.props;
 }
 ```
 
-En aha oplevelse som jeg synes jeg havde med denne opgave, var at gøre brug af endnu flere selectore og pseudo selectorer, bl.a. :not(), :nth-child() osv. Derudover har jeg også haft brug nesting ret meget især til at style direkte børn, som er nyt for mig. Begge disse dele synes jeg er super smart og en god måde at style specifikke elementer, uden at gøre brug af classnames eller id'er.
+En aha oplevelse som jeg synes jeg havde med denne opgave, var at gøre brug af endnu flere selectore og pseudo selectorer, bl.a. :not() og :nth-child(). Derudover har jeg også haft brug nesting ret meget især til at style direkte børn, som er nyt for mig. Begge disse dele synes jeg er super smart og en god måde at style specifikke elementer, uden at gøre brug af classnames eller id'er.
 Derudover synes jeg også at det har været spændende at lære hvordan man kan benytte container queries i stedet for media queries. Det vil jeg helt sikkert bruge mere tid på at lære. _Eksempel nedenfor:_
 
 ```css
@@ -56,6 +56,6 @@ Derudover synes jeg også at de forskellige mønstre som var bag diverse element
 ![Alt text](/docs/excample-1.png)
 ![Alt text](/docs/excample-2.png)
 
-En tredje svær ting ved denne opgave var at designet kun var til pc. Vi har generelt haft meget fokus på altid at designe og kode mobile first, så det gjorde jeg selvfølgelig også denne gang, men det synes jeg også har skabt nogle bump på vejen. Nemlig da jeg har skulle tage udgangspunkt i pc designet. Så hvis jeg skulle gøre det om, havde jeg nok ikke kodet dette sitet mobile first.
+En tredje svær ting ved denne opgave var at designet kun var til pc. Vi har generelt haft meget fokus på altid at designe og kode mobile first, så det gjorde jeg selvfølgelig også denne gang. Det synes jeg dog har skabt en del bump på vejen, nemlig da jeg har skulle tage udgangspunkt i et design kun til pc. Så hvis jeg skulle gøre det om, havde jeg nok ikke kodet dette site mobile first alligevel.
 
 Alt i alt synes jeg at det har været en super spændende og udfordrende opgave og at jeg har lært nogle brugbare css styling tips, som jeg vil tage med videre til de kommende forløb.
